@@ -6,4 +6,4 @@ const travelSchema = new mongoose.Schema({
 
 const Travel = mongoose.model('Travel', travelSchema);
 
-module.exports = Bookmarks;
+module.exports = Travel;
