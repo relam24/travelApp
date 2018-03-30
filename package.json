@@ -1,0 +1,23 @@
+{
+  "name": "travelapp",
+  "version": "1.0.0",
+  "description": "App dedicated to showing places you've been",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relam24/travelApp.git"
+  },
+  "author": "Natalie Wolff Rachel Elam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/relam24/travelApp/issues"
+  },
+  "homepage": "https://github.com/relam24/travelApp#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
