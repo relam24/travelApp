@@ -18,19 +18,19 @@ app.controller('MyController', ['$http', function($http){
     });
   };
 
-  // this.deleteTravel = function(travel){
-  //   $http({
-  //     method:'DELETE',
-  //     url: '/travel' + travel._id
-  //   }).then(
-  //     function(response){
-  //       controller.getTravel();
-  //     },
-  //     function(error){
-  //
-  //     }
-  //   );
-  // }
+  this.deleteTravel = function(travel){
+    $http({
+      method:'DELETE',
+      url: '/travel/' + travel._id
+    }).then(
+      function(response){
+        controller.getTravel();
+      },
+      function(error){
+
+      }
+    );
+  }
 
   this.getTravel = function(){
     $http({

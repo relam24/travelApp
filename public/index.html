@@ -22,18 +22,19 @@
     </div>
 
     <h2>Your Favorite Locations</h2>
-    <div class="favorites" ng-repeat="travel in ctrl.travel">
+    <div class="favorites" >
       <table>
         <tr ng-repeat="travel in ctrl.travel">
             {{travel.location}}
           <td>
-
+            <a href="{{travel.url}}" target="_blank">{{travel.location}}</a>
+  <button ng-click="ctrl.deleteTravel(travel)">Delete This Location</button>
           </td>
         </tr>
       </table>
     </div>
 
-    <button ng-click="ctrl.deleteTravel(travel)">Delete This Location</button>
+
 
   </div>
   </body>
