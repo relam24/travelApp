@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="travelApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="MyController as ctrl">
+<h1>Travel Log</h1>
+
+  <div class="container">
+
+    <div class="form">
+
+      <form ng-submit="ctrl.createTravel()">
+        Location: <input type="text" ng-model="ctrl.location"/> </br>
+        URL: <input type="text" ng-model= "ctrl.url" placeholder="grab url from weather.com"/>
+        <input type="submit" name="" value="Create New Log">
+      </form>
+    </div>
+
+    <h2>Your Favorite Locations</h2>
+    <div class="favorites" ng-repeat="travel in ctrl.travel">
+      <table>
+        <tr ng-repeat="travel in ctrl.travel">
+            {{travel.location}}
+          <td>
+
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <button ng-click="ctrl.deleteTravel(travel)">Delete This Location</button>
+
+  </div>
+  </body>
+</html>
