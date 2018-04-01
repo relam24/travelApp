@@ -32,7 +32,8 @@ app.controller('MyController', ['$http', function($http){
     );
   }
 
-  this.getTravel = function(){
+
+  this.getTravel = function(travel){
     $http({
       method: 'GET',
       url:'/travel',
@@ -44,7 +45,19 @@ app.controller('MyController', ['$http', function($http){
   };
 this.getTravel();
 
-
+this.editTravel = function(travel){
+  $http({
+    method: 'PUT',
+    url:'/travel/' + travel._id,
+    data:{
+      location: this.updatedLocation,
+      url: this.updatedUrl
+    }
+  }).then(function(response){
+    controller.getTravel();
+  })
+}
+this.indexofEditFormToShow = 1;
 
 
 
