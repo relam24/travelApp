@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="travelApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="MyController as ctrl">
+<h1>Travel Log</h1>
+
+
+  <div class="container">
+
+    <div class="form">
+
+      <form ng-submit="ctrl.createTravel()">
+        Location: <input type="text" ng-model="ctrl.location"/> </br>
+        URL: <input type="text" ng-model= "ctrl.url" placeholder="grab url from google"/>
+        <input type="submit" name="" value="Create New Log">
+      </form>
+    </div>
+<div class="locations">
+
+
+    <h2>Your Favorite Locations</h2>
+    <div class="favorites" >
+      <table>
+        <tr ng-repeat="travel in ctrl.travel">
+            {{travel.location}}
+          <td>
+            <a href="{{travel.url}}" target="_blank">{{travel.location}}</a>
+  <button ng-click="ctrl.deleteTravel(travel)">Delete This Location</button>
+
+  <a href="#" ng-click="ctrl.indexofEditFormToShow = $index">Edit Location</a>
+  <form ng-if="$index === ctrl.indexofEditFormToShow" ng-submit="ctrl.editTravel(travel);">
+    <input type="text" ng-model="ctrl.updatedLocation"/>
+    <input type="submit" value="Update Location">
+    <form ng-if="$index === ctrl.indexofEditFormToShow" ng-submit="ctrl.editTravel(travel);">
+      <input type="text" ng-model="ctrl.updatedUrl"/>
+      <input type="submit" value="Update Url">
+          </td>
+        </tr>
+      </table>
+    </div>
+</div>
+
+
+  </div>
+  </body>
+</html>
